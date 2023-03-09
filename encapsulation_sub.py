@@ -1,6 +1,6 @@
 
-
-# Demonstrating private and protected variables within the same class
+# Demonstrating encapsulation of public, private, and protected variables as
+# well as how to access and manipulate them
 
 class Characters:
     def __init__(self,name,age,power):
@@ -8,7 +8,7 @@ class Characters:
         self._age = age #This is a protected variabe, only accessible within the Character class and (potential) child classes
         self.__power = power #This is a private variable, only accessible from within the Character class
 
-# This function will display the object that has been instantiat
+# This function will display the object that has been instantiated
     def display(self):
         print("You chose", self.name, "who is", self._age, "years old with the power of", self.__power)
 
@@ -20,8 +20,6 @@ class Characters:
     def set_Priv(self,priv):
         self.__power = priv
         return priv
-
-    
 
 
         
