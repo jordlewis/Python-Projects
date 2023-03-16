@@ -70,28 +70,25 @@ class ParentWindow(Frame):
         destination = self.destination_dir.get()
         # Gets a list of files in the source directory
         source_files = os.listdir(source)
-
-        
         # Runs through each file in the source directory
-        for i in source_files:
-            
-            # Getting the current time
-            cur_time = datetime.now()
-            
-            # Getting the timestamp from the file from it's filepath
-            mt = os.path.getmtime(None)
-
+        for i in source_files: 
+            # Getting the full file path to access the files within the directory
+            filepath = os.path.join(source, i)         
+            # Getting the modification timestamp from the file 
+            mt = os.path.getmtime(filepath)
+            # The 'fromtimestamp()' computes the date from the timetamp 
             ts = datetime.fromtimestamp(mt)
-
-            file_mod = (ts-cur_time)
-
-
-            if file_mod > timedelta(hours=24) :
+            # Getting the current date
+            cur_time = datetime.now()  
+            # Subtracting the modification date from the current date
+            file_mod = (cur_time-ts)
+            # Checking if the file is less than 24 hours old and if so, moves the file to the destination directory
+            if file_mod < timedelta(hours=24):
                 # moves each file from the source to the destination
                 shutil.move(source + '/' + i, destination)
                 print(i + ' was successfully transferred.')
             else:
-                print('There are no files to be moved.' +str(file_mod))
+                print(i + 'was not moved; Last modification: ' +str(file_mod))
 
 
     #Creates function to exit program
