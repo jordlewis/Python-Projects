@@ -15,7 +15,7 @@
 
 <details>
   <summary>File Transfer GUI</summary>
-  <p>This application provides a graphical user interface to the user and allows them to transfer files from a source directory to a destination directory. The application features code to will loop through the files in the source directory, determine if the last modification is less than 24 hours old, then transfers the identified files to the chosen directory. Every file that is transferred successfully will be saved in a database. 
+  <p>This application, built with tkinter, provides a graphical user interface to the user and allows them to transfer files from a source directory to a destination directory. The application features code to will loop through the files in the source directory, determine if the last modification is less than 24 hours old, then transfers the identified files to the chosen directory. Every file that is transferred successfully will be saved in a database. 
  </details>
  
  <details>
@@ -25,7 +25,7 @@
  
   <details>
   <summary>Phone Book</summary>
-  <p>This </p>
+  <p>This Phone Book application was built using tkinter and provides an interactive graphical user interface to add, update, and delete contacts. The GUI has fields for the first name, last name, phone number, and email address while also displaying a list of the users to choose from if data manipulation is needed.</p>
  </details>
  
  ### Author ###
